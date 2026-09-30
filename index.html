@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phyo Paing | Data & Business Analytics Portfolio</title>
+<meta name="description" content="Portfolio of Phyo Paing: SQL, Excel, Python, Tableau and Power BI projects covering data cleaning, analysis, dashboards and data modeling.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F6F7F9;--ink:#16181D;--muted:#5B6270;--line:#DDE1E7;--accent:#2447D6;--sql:#0E7C86;--excel:#2E8B57;--python:#C2410C;--tableau:#3457D5;--powerbi:#B8860B;
+--display:"Bricolage Grotesque",system-ui,sans-serif;--body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif}
+@media (prefers-color-scheme:dark){:root{--bg:#0F1115;--ink:#ECEEF2;--muted:#9AA1AF;--line:#262B33;--accent:#8FA6FF}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--body)}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:22px 0;gap:16px;flex-wrap:wrap}
+header.top strong{font:700 1.05rem var(--display)}
+nav a{margin-left:20px;color:var(--muted);text-decoration:none;font-weight:500}
+nav a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+.hero{padding:72px 0 56px;max-width:760px}
+h1{font:700 clamp(2.8rem,8vw,5.2rem)/1 var(--display);letter-spacing:-.03em;margin:0 0 20px}
+.role{font:500 clamp(1.3rem,3vw,1.75rem)/1.3 var(--display);margin:0 0 20px;color:var(--muted)}
+.hero p{max-width:60ch;margin:0 0 28px}
+.edu{display:grid;gap:10px;margin:0;padding:0;list-style:none;color:var(--muted);font-size:.98rem}
+.edu b{color:var(--ink);font-weight:600}
+h2{font:700 1.75rem var(--display);letter-spacing:-.02em;margin:0 0 6px}
+#skills{padding:0 0 64px}
+#skills>p{color:var(--muted);margin:0;max-width:56ch}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:32px 28px;margin-top:28px}
+.skill{border-top:3px solid var(--c);padding-top:14px}
+.skill h3{font:700 1.15rem var(--display);margin:0 0 10px}
+.skill ul{margin:0 0 14px;padding:0;list-style:none;color:var(--muted);font-size:.96rem;display:grid;gap:4px}
+.skill button{background:none;border:0;padding:0;font:600 .95rem var(--body);color:var(--ink);text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+.skill button:hover{color:var(--accent)}
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 8px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:none;color:var(--ink);font:500 .95rem var(--body);cursor:pointer}
+.chip:hover{border-color:var(--muted)}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip small{opacity:.65;font-size:.85rem}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block;flex:none}
+.count{color:var(--muted);font-size:.95rem;margin:0 0 8px}
+.list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:200px 1fr auto;gap:28px;align-items:center;padding:26px 0;border-bottom:1px solid var(--line)}
+.row img{width:200px;aspect-ratio:16/10;object-fit:cover;border-radius:6px;background:var(--line);display:block}
+.row h3{font:700 1.25rem/1.25 var(--display);margin:0 0 8px}
+.row h3 a{text-decoration:none}
+.row h3 a:hover{text-decoration:underline;text-underline-offset:4px}
+.row p{margin:0 0 10px;color:var(--muted);max-width:62ch}
+.tags{display:flex;gap:16px;flex-wrap:wrap;font-size:.9rem;font-weight:500}
+.tags span{display:inline-flex;align-items:center;gap:6px}
+.go{white-space:nowrap;font-weight:600;text-decoration:none;border:1px solid var(--ink);padding:10px 18px;border-radius:999px}
+.go:hover{background:var(--ink);color:var(--bg)}
+.contact{padding:80px 0 40px}
+.contact p{max-width:52ch;color:var(--muted);margin:0 0 24px}
+.links{display:flex;gap:12px;flex-wrap:wrap}
+.links a{font-weight:600;padding:12px 22px;border-radius:999px;border:1px solid var(--ink);text-decoration:none}
+.links a:first-child{background:var(--ink);color:var(--bg)}
+.links a:hover{border-color:var(--accent);color:var(--accent);background:none}
+footer{padding:28px 0 48px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+@media (max-width:760px){.row{grid-template-columns:1fr;gap:14px}.row img{width:100%}.go{justify-self:start}.hero{padding-top:40px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><strong><a href="#" style="text-decoration: none; color: inherit;">Phyo Paing</a></strong>
+<nav><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a><a href="https://github.com/phyopaing75">GitHub</a></nav></header>
+
+<main>
+<section class="hero">
+<h1>Hello Everyone!</h1>
+<p class="role">I turn messy data into clear answers for business decisions.</p>
+<p>I work with SQL, Excel, Python, Tableau and Power BI. The projects below cover data cleaning, exploratory analysis, dashboards and data modeling.</p>
+<ul class="edu">
+<li><b>MSc, Business Analytics &amp; Digital Transformation</b><br>Asian Institute of Technology, 2026</li>
+<li><b>BEng, Computer Engineering &amp; Information Technology</b><br>Yangon Technological University, 2019</li>
+</ul>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+<p>The tools I use, and what I've done with each in the projects below.</p>
+<div class="skills" id="skills-grid"></div>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+<div class="filters" id="filters" role="group" aria-label="Filter projects by tool"></div>
+<p class="count" id="count" aria-live="polite"></p>
+<ul class="list" id="list"></ul>
+</section>
+
+<section class="contact" id="contact">
+<h2>Get in touch</h2>
+<p>Want to talk data, dashboards or a project? Message me on LinkedIn.</p>
+<div class="links">
+<a href="https://www.linkedin.com/in/phyo-paing-4b0477189/">Message on LinkedIn</a>
+<a href="https://github.com/phyopaing75">GitHub</a>
+<!--<a href="https://public.tableau.com/app/profile/phyo.paing8212">Tableau Public</a>-->
+<a href="mailto:phyopaing75@gmail.com">Email</a>
+</div>
+</section>
+</main>
+<footer>&copy; 2026 Phyo Paing</footer>
+</div>
+
+<script>
+const G="https://github.com/phyopaing75/";
+const TOOLS={SQL:"var(--sql)",Excel:"var(--excel)",Python:"var(--python)",Tableau:"var(--tableau)","Power BI":"var(--powerbi)"};
+const P=[
+{t:"Global Company Layoffs Data Cleaning & EDA",k:["SQL"],d:"Cleans messy global layoff records in MySQL using staging tables, deduplication and self-join imputation, then uses CTEs and window functions to trace layoffs by funding stage, company and year.",u:G+"global-company-layoffs-cleaning-eda-sql",i:"layoffs.png"},
+{t:"Global Covid-19 EDA",k:["SQL"],d:"Joins COVID-19 mortality and vaccination data to compare infection rates, fatality ratios and rolling vaccinations, using CTEs, temp tables and views built for BI.",u:G+"global-covid19-eda-sql",i:"covid19.jpg"},
+{t:"Coffee Sales Interactive Dashboard",k:["Excel"],d:"Turns raw multi-table coffee sales data into an executive dashboard with pivot tables, slicers and a timeline, tracking revenue, top products and loyalty program uplift.",u:G+"coffee-sales-dashboard-excel",i:"coffee_sales.jpg"},
+{t:"Bike Sales Interactive Dashboard",k:["Excel"],d:"Cleans survey data and builds customer segments, then uses pivot tables and slicers to show what drives bike purchases by income, commute distance and age.",u:G+"bike-sales-dashboard-excel",i:"bike_sales.jpg"},
+{t:"London Bike Rides Analytics",k:["Python","Tableau"],d:"A Python pipeline prepares 17,000+ bike-share and weather records for a Tableau dashboard showing how weather shifts commuter demand.",u:G+"london-bike-rides-dashboard-python-tableau",i:"bike_rides.jpg",a:["View dashboard","https://public.tableau.com/app/profile/phyo.paing8212/viz/LondonBikeRideAnalysis_17881494251050/Dashboard1"]},
+{t:"Seattle Airbnb Market Performance & Revenue",k:["Tableau"],d:"Combines 1M+ Seattle Airbnb booking, listing and calendar records in Tableau to show how nightly rates vary by zip code, bedroom count and season.",u:G+"airbnb-analysis-tableau",i:"airbnb.jpg",a:["View dashboard","https://public.tableau.com/app/profile/phyo.paing8212/viz/airbnb_analysis_17901513018730/Dashboard1"]},
+{t:"Sales, Fulfilment & Marketing Data Model",k:["Power BI"],d:"Reshapes a 21-sheet Excel workbook into a multi-fact star schema with 23 relationships, row-level security and 39 DAX measures covering sales, fulfilment, inventory and campaigns.",u:G+"sales-fulfilment-marketing-data-model-powerbi",i:"sales_data_model.jpg"},
+{t:"Data Professional Survey Breakdown",k:["Power BI"],d:"Power Query and DAX turn global survey responses into a dashboard on pay, tool use and workplace sentiment, showing pay gaps, Python's lead and hurdles to entering the field.",u:G+"data-professional-survey-breakdown_dashboard-powerbi",i:"data_professional_survey.jpg",a:["View report",G+"data-professional-survey-breakdown_dashboard-powerbi/blob/main/Data%20Professional%20Survey%20Breakdown%20Project.pdf"]},
+{t:"Top Rated IMDb Movies Analysis",k:["Power BI"],d:"Analyzes budgets and returns for 200 top-rated IMDb films with Power Query and DAX, ranking genres and studios by ROI.",u:G+"top-rated-imdb-movies-dashboard-powerbi",i:"imdb.jpeg",a:["View report",G+"top-rated-imdb-movies-dashboard-powerbi/blob/main/Top%20Rated%20IMDB%20Movies%20Analysis.pdf"]},
+{t:"Largest Companies in the US",k:["Python"],d:"Scrapes Wikipedia's 100 largest US companies by revenue with Requests and BeautifulSoup, cleans the text and exports a Pandas DataFrame to CSV.",u:G+"listing-largest-companies-in-us-python",i:"largest_companies_us.jpg"},
+{t:"Automated Amazon Price Tracker",k:["Python"],d:"Tracks Amazon product prices with Requests and BeautifulSoup, logging timestamped prices to a CSV on a schedule to build a price history.",u:G+"web-scraping-amazon-python",i:"amazon.jpg"}
+];
+const esc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+const filters=document.getElementById("filters"),list=document.getElementById("list"),count=document.getElementById("count");
+let active="All";
+function render(){
+  const shown=P.filter(p=>active==="All"||p.k.includes(active));
+  list.innerHTML=shown.map(p=>`<li class="row"><a href="${p.u}"><img src="images/${p.i}" alt="Preview of ${esc(p.t)}" loading="lazy"></a><div><h3><a href="${p.u}">${esc(p.t)}</a></h3><p>${esc(p.d)}</p><div class="tags">${p.k.map(k=>`<span><i class="dot" style="background:${TOOLS[k]}"></i>${k}</span>`).join("")}</div></div><a class="go" href="${p.a?p.a[1]:p.u}">${p.a?p.a[0]:"View project"}</a></li>`).join("");
+  count.textContent=`Showing ${shown.length} of ${P.length} projects`;
+  filters.querySelectorAll(".chip").forEach(b=>b.setAttribute("aria-pressed",b.dataset.k===active));
+}
+["All",...Object.keys(TOOLS)].forEach(k=>{
+  const n=k==="All"?P.length:P.filter(p=>p.k.includes(k)).length;
+  const b=document.createElement("button");b.className="chip";b.dataset.k=k;
+  b.innerHTML=(k==="All"?"":`<i class="dot" style="background:${TOOLS[k]}"></i>`)+`${k} <small>${n}</small>`;
+  b.onclick=()=>{active=k;render()};filters.appendChild(b);
+});
+const S={
+"SQL":["Data cleaning and deduplication","CTEs and window functions","Views and temp tables","Self joins"],
+"Excel":["Pivot tables and slicers","Timelines and dashboards","Lookups and nested formulas","Data cleaning"],
+"Python":["Pandas","Web scraping","Requests and BeautifulSoup","Data pipelines"],
+"Tableau":["Interactive dashboards","Time brushing and parameters","Heat maps","Pricing and demand analysis"],
+"Power BI":["Power Query","DAX measures","Star schema data modeling","Row-level security"]};
+document.getElementById("skills-grid").innerHTML=Object.keys(S).map(k=>{
+  const n=P.filter(p=>p.k.includes(k)).length;
+  return `<div class="skill" style="--c:${TOOLS[k]}"><h3>${k}</h3><ul>${S[k].map(x=>`<li>${x}</li>`).join("")}</ul><button data-k="${k}">See ${n} project${n>1?"s":""}</button></div>`}).join("");
+document.getElementById("skills-grid").onclick=e=>{
+  const b=e.target.closest("button");if(!b)return;
+  active=b.dataset.k;render();document.getElementById("projects").scrollIntoView();};
+render();
+</script>
+</body>
+</html>
